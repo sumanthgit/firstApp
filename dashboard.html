@@ -1,0 +1,41 @@
+<div class="container" ng-controller="dashboardCtrl">
+<center>
+<h1>Save book for later</h1>
+<input type="text" placeholder="text book name" ng-model="bname"><br><br>
+<input type="text" placeholder="book author" ng-model="bauthor"><br><br>
+<input type="text" placeholder="Branch name" ng-model="branch"><br><br>
+<button class="btn btn-primary btn-md" ng-click="save()">save book</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<button class="btn btn-primary btn-md" ng-click="viewbooks()">view saved book</button>
+</center>
+
+<center><h1 ng-show="viewDetails">Your products</h1></center>
+<div class="container" ng-show="viewDetails" ng-repeat="p in viewDetails">
+<table>
+<tr>
+<th>S.no</th>
+<th>Book .</th>
+<th>Author</th>
+<th>Branch</th>
+<th></th>
+<th></th>
+</tr>
+<tr>
+<td>{{$index+1}}</td>
+<td><h2 ng-value="p.book" ng-model="p.book">{{p.book}}</h2></td>
+<td><h2 ng-value="p.author" ng-model="p.author">{{p.author}}</h2></td>
+<td><h2 ng-value="p.branch" ng-model="branch">{{p.branch}}</h2></td>
+<td><button class="btn btn-warning btn-md" ng-click="edit(p)">Edit</button></td>
+<td><button class="btn btn-danger btn-md" ng-click="delete($index)">delete</button></td><br>
+</tr>
+</table>
+</div><br><br>
+
+<div ng-show="editDetails">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<h3 ng-model="index">{{index}}</h3>
+<input type="text" ng-model="book" ng-value="book">
+<input type="text" ng-model="author" ng-value="author">
+<input type="text" ng-model="branch" ng-value="branch">
+<input type="button" value="update" ng-click="update()">
+</div>
+
+</div>

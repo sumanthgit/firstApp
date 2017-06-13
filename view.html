@@ -1,0 +1,23 @@
+<div ng-controller="viewCtrl">
+<h1>Your products</h1>
+<div class="container" ng-show="viewDetails" ng-repeat="p in viewDetails">
+<table>
+<tr>
+<th>S.no</th>
+<th>Book .</th>
+<th>Author</th>
+<th>Branch</th>
+<th></th>
+<th></th>
+</tr>
+<tr>
+<td>{{$index+1}}</td>
+<td><h2 ng-value="p.book" ng-model="p.book">{{p.book}}</h2></td>
+<td><h2 ng-value="p.author">{{p.author}}</h2></td>
+<td><h2 ng-value="p.branch">{{p.branch}}</h2></td>
+<td><button class="btn btn-warning btn-md">Edit</button></td>
+<td><button class="btn btn-danger btn-md" ng-click="delete($index)">delete</button></td><br>
+</tr>
+</table>
+</div>
+</div>

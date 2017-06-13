@@ -1,0 +1,86 @@
+<div class="container-fluid" ng-controller="dashCtrl">
+  <div class="row">
+	<form class="form-inline" role="form">
+		<div class="form-group">
+			<label for="name">Name:</label>
+			<input type="text" id="name" ng-model="datauser.name" >
+			
+		</div>
+		<div class="form-group">
+			<label for="email">Email:</label>
+			<input type="email" id="email" ng-model="datauser.email">
+			
+		</div>
+		<div class="form-group">
+			<label for="pwd">Password:</label>
+			<input type="password" id="password" ng-model="datauser.password">
+
+		</div>
+		<button type="button" class="btn btn-success" ng-click="save()">Save</button>
+	</form>
+	<br>
+    <div class="col-sm-7">
+	<h4>Table Save</h4>
+	<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th style="width:5%">No</th>
+					<th style="width:25%">Name</th>
+					<th style="width:25%">Email</th>
+					<th style="width:25%">Password</th>
+					<th colspan=4>Action</th>
+				</tr>
+			</thead>
+			<tbody> 
+			<tr ng-repeat="data1 in datas ">
+				<td>
+					{{$index + 1}}
+				</td>
+				<td>
+					{{data1.name}}
+				</td>
+				<td>
+					{{data1.email}}
+				</td>
+				<td>
+					{{data1.password}}
+				</td>
+				<td>
+				<button ng-click="edit($index)" type="button" class="btn btn-warning">Edit</button>
+				<button ng-click="delete($index)" type="button" class="btn btn-danger">Delete</button>
+				<button ng-click="add($index)" type="button" class="btn btn-success ">Add</button>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+		<h4>Table Add</h4>
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th style="width:5%">No</th>
+					<th style="width:20%">Name</th>
+					<th style="width:20%">Email</th>
+					<th style="width:20%">Password</th>
+				</tr>
+			</thead>
+			<tbody> 
+			<tr ng-repeat="data2 in detail ">
+				<td>
+					{{$index + 1}}
+				</td>
+				<td>
+					{{data2.name}}
+				</td>
+				<td>
+					{{data2.email}}
+				</td>
+				<td>
+					{{data2.password}}
+				</td>
+			</tr>
+			</tbody>
+		</table>
+		
+	</div>
+  </div>
+</div>
